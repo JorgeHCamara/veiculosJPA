@@ -1,6 +1,8 @@
 import br.com.fiap.teste.repository.VeiculoRepository;
 import br.com.fiap.teste.view.VeiculoView;
 
+import javax.swing.*;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -11,6 +13,9 @@ public class Main {
 
         repoVeiculo.save(veiculo);
 
+        var idVeiculo = VeiculoView.formFindById();
+
+        System.out.println(repoVeiculo.findById(idVeiculo));
     }
 
 }

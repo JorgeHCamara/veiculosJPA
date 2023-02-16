@@ -24,4 +24,8 @@ public abstract class VeiculoView {
 
     }
 
+    public static Long formFindById(){
+        return Long.valueOf(JOptionPane.showInputDialog("Informe o ID do veículo:"));
+    }
+
 }

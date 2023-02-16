@@ -4,7 +4,7 @@ import br.com.fiap.teste.model.Veiculo;
 
 public class VeiculoRepository extends Repository {
 
-    public VeiculoRepository(){
+    public VeiculoRepository() {
         super();
     }
 
@@ -13,6 +13,10 @@ public class VeiculoRepository extends Repository {
         this.entityManager.persist(veiculo);
         this.entityManager.getTransaction().commit();
         this.close();
+    }
+
+    public Veiculo findById(Long id) {
+        return this.entityManager.find(Veiculo.class, id);
     }
 
 }
