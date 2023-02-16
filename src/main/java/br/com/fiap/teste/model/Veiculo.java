@@ -1,6 +1,7 @@
 package br.com.fiap.teste.model;
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "VEICULOS_JPA")
@@ -12,6 +13,7 @@ public class Veiculo {
     private String nome;
     private String descricao;
     private BigDecimal preco;
+    private LocalDate fabricacao;
 
     public Veiculo() {
 
@@ -53,6 +55,15 @@ public class Veiculo {
         return this;
     }
 
+    public LocalDate getFabricacao() {
+        return fabricacao;
+    }
+
+    public Veiculo setFabricacao(LocalDate fabricacao) {
+        this.fabricacao = fabricacao;
+        return this;
+    }
+
     @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("Veiculo{");
@@ -60,6 +71,7 @@ public class Veiculo {
         sb.append(", nome='").append(nome).append('\'');
         sb.append(", descricao='").append(descricao).append('\'');
         sb.append(", preco=").append(preco);
+        sb.append(", fabricacao=").append(fabricacao);
         sb.append('}');
         return sb.toString();
     }
